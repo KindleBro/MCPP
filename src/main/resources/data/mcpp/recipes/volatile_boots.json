@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "i i",
+    "i i"
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "mcpp:alchemists_gold_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "mcpp:volatile_boots",
+    "count": 1
+  }
+}

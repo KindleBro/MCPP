@@ -1,0 +1,8 @@
+{
+  "variants": {
+      "facing=north": { "model": "mcppmod:block/h_nuke" },
+      "facing=east": { "model": "mcppmod:block/h_nuke", "y": 90 },
+      "facing=south": { "model": "mcppmod:block/h_nuke", "y": 180 },
+      "facing=west": { "model": "mcppmod:block/h_nuke", "y": 270 }
+    }
+}

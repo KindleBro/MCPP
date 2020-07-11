@@ -11,6 +11,7 @@ public class VolatileItemTier implements IItemTier {
     public static int AXE_ATTACK_DAMAGE = 7;
 
     public static float HOE_ATTACK_SPEED = 1.0f;
+    public static int HOE_ATTACK_DAMAGE = 1;
 
     public static float PICKAXE_ATTACK_SPEED = 1.2f;
     public static int PICKAXE_ATTACK_DAMAGE = 2;
