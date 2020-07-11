@@ -1,8 +1,6 @@
 package com.eonzenx.mcppmod;
 
-import com.eonzenx.mcppmod.util.FoodRegistryHandler;
-import com.eonzenx.mcppmod.util.ItemRegistryHandler;
-import com.eonzenx.mcppmod.util.ToolRegistryHandler;
+import com.eonzenx.mcppmod.util.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -25,7 +23,6 @@ public class MCPPMod
     {
         final IEventBus mcppmodEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-
         // Register the setup method for modloading
         mcppmodEventBus.addListener(this::setup);
         // Register the doClientStuff method for modloading
@@ -33,6 +30,8 @@ public class MCPPMod
 
         FoodRegistryHandler.init();
         ToolRegistryHandler.init();
+        ArmorRegistryHandler.init();
+        BlockRegistryHandler.init();
         ItemRegistryHandler.init();
 
         instance = this;

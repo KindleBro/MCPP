@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "i",
+    "i",
+    "s"
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "mcpp:alchemists_gold_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "mcpp:volatile_sword",
+    "count": 1
+  }
+}
