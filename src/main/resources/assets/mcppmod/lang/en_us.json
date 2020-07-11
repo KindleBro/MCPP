@@ -7,14 +7,16 @@
 
   "_comment02": "Food items goes here",
   "item.mcppmod.snow_berries": "Snow Berries",
-  "item.mcppmod.spicy_berries": "Spicy Berries",
+  "item.mcppmod.wild_soursop": "Wild Soursop",
+  "item.mcppmod.peach": "Peach",
+  "item.mcppmod.gourd": "Gourd",
+  "item.mcppmod.jalapenos": "Jalapenos",
   "item.mcppmod.odd_berries": "Odd Berries",
 
   "_comment03": "Items goes here",
   "item.mcppmod.alchemists_gold_ingot": "Alchemists Gold Ingot",
 
   "_comment04": "Tools goes here",
-  "item.mcppmod.alchemists_gold_ingot": "Alchemist's Gold Ingot",
   "item.mcppmod.volatile_axe": "Volatile Axe",
   "item.mcppmod.volatile_hoe": "Volatile Hoe",
   "item.mcppmod.volatile_pickaxe": "Volatile Pickaxe",
