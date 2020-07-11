@@ -1,0 +1,27 @@
+{
+  "_comment01": "Item Groups goes here",
+  "itemGroup.mcppmod_farmingTab": "MC++ Farming",
+  "itemGroup.mcppmod_craftingTab": "MC++ Crafting",
+  "itemGroup.mcppmod_combatTab": "MC++ Combat",
+  "itemGroup.mcppmod_worldTab": "MC++ World",
+
+  "_comment02": "Food items goes here",
+  "item.mcppmod.snow_berries": "Snow Berries",
+  "item.mcppmod.wild_soursop": "Wild Soursop",
+  "item.mcppmod.peach": "Peach",
+  "item.mcppmod.gourd": "Gourd",
+  "item.mcppmod.jalapenos": "Jalapenos",
+  "item.mcppmod.odd_berries": "Odd Berries",
+
+  "_comment03": "Items goes here",
+  "item.mcppmod.alchemists_gold_ingot": "Alchemists Gold Ingot",
+
+  "_comment04": "Tools goes here",
+  "item.mcppmod.volatile_pickaxe": "Volatile Pickaxe",
+
+  "_comment05": "Blocks goes here",
+
+
+  "_comment06": "Armor goes here"
+
+}
