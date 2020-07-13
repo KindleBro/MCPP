@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mcppmod:items/alchemists_gold_ingot"
+    "layer0": "mcppmod:item/alchemists_gold_ingot"
   }
 }

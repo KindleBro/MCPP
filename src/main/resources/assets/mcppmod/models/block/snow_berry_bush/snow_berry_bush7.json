@@ -1,0 +1,6 @@
+{
+  "parent": "blocks/crop",
+  "textures": {
+    "crops": "mcppmod:block/snow_berry_bush7"
+  }
+}

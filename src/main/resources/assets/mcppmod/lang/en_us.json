@@ -11,17 +11,27 @@
   "item.mcppmod.peach": "Peach",
   "item.mcppmod.gourd": "Gourd",
   "item.mcppmod.jalapenos": "Jalapenos",
-  "item.mcppmod.odd_berries": "Odd Berries",
+  "item.mcppmod.dragonfruit": "Dragonfruit",
 
   "_comment03": "Items goes here",
   "item.mcppmod.alchemists_gold_ingot": "Alchemists Gold Ingot",
 
   "_comment04": "Tools goes here",
+  "item.mcppmod.volatile_axe": "Volatile Axe",
+  "item.mcppmod.volatile_hoe": "Volatile Hoe",
   "item.mcppmod.volatile_pickaxe": "Volatile Pickaxe",
+  "item.mcppmod.volatile_shovel": "Volatile Shovel",
+  "item.mcppmod.volatile_sword": "Volatile Sword",
 
   "_comment05": "Blocks goes here",
+  "block.mcppmod.snow_berry_bush": "Snow Berry Bush",
 
+  "_comment06": "Armor goes here",
+  "item.mcppmod.volatile_helmet": "Volatile Helmet",
+  "item.mcppmod.volatile_chestplate": "Volatile Chestplate",
+  "item.mcppmod.volatile_leggings": "Volatile Leggings",
+  "item.mcppmod.volatile_boots": "Volatile Boots",
 
-  "_comment06": "Armor goes here"
-
+  "_comment07": "Fun stuff goes here",
+  "block.mcppmod.h_nuke" : "Harrison's Nuke"
 }

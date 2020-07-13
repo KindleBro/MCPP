@@ -1,11 +1,12 @@
 package com.eonzenx.mcppmod.objects.food;
 
 import com.eonzenx.mcppmod.util.CustomItemGroups;
-import net.minecraft.item.Item;
+import net.minecraft.block.Block;
+import net.minecraft.item.BlockNamedItem;
 
-public class FoodBase extends Item
+public class FoodBase extends BlockNamedItem
 {
-    public FoodBase(Properties props) {
-        super(props.group(CustomItemGroups.FARMING_TAB));
+    public FoodBase(Block blockIn, Properties props) {
+        super(blockIn, props.group(CustomItemGroups.FARMING_TAB));
     }
 }

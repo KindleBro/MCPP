@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mcppmod:items/wild_soursop"
+    "layer0": "mcppmod:item/wild_soursop"
   }
 }

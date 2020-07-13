@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "mcppmod:items/snow_berries"
+    "layer0": "mcppmod:item/snow_berries"
   }
 }
