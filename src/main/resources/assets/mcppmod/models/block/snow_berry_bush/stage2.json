@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mcppmod:block/snow_berry_bush/stage2"
+  }
+}

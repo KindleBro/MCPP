@@ -1,12 +1,8 @@
 {
   "variants": {
-    "age=0": { "model": "mcppmod:block/snow_berry_bush/snow_berry_bush0" },
-    "age=1": { "model": "mcppmod:block/snow_berry_bush/snow_berry_bush1" },
-    "age=2": { "model": "mcppmod:block/snow_berry_bush/snow_berry_bush2" },
-    "age=3": { "model": "mcppmod:block/snow_berry_bush/snow_berry_bush3" },
-    "age=4": { "model": "mcppmod:block/snow_berry_bush/snow_berry_bush4" },
-    "age=5": { "model": "mcppmod:block/snow_berry_bush/snow_berry_bush5" },
-    "age=6": { "model": "mcppmod:block/snow_berry_bush/snow_berry_bush6" },
-    "age=7": { "model": "mcppmod:block/snow_berry_bush/snow_berry_bush7" }
+    "age=0": { "model": "mcppmod:block/snow_berry_bush/stage0" },
+    "age=1": { "model": "mcppmod:block/snow_berry_bush/stage1" },
+    "age=2": { "model": "mcppmod:block/snow_berry_bush/stage2" },
+    "age=3": { "model": "mcppmod:block/snow_berry_bush/stage3" }
   }
 }
