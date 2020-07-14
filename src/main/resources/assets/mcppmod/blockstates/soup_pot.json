@@ -1,0 +1,18 @@
+{
+  "variants": {
+      "status=closed,facing=north": { "model": "mcppmod:block/soup_pot_closed" },
+      "status=closed,facing=east": { "model": "mcppmod:block/soup_pot_closed", "y": 90 },
+      "status=closed,facing=south": { "model": "mcppmod:block/soup_pot_closed", "y": 180 },
+      "status=closed,facing=west": { "model": "mcppmod:block/soup_pot_closed", "y": 270 },
+
+      "status=empty,facing=north": { "model": "mcppmod:block/soup_pot_empty" },
+      "status=empty,facing=east": { "model": "mcppmod:block/soup_pot_empty", "y": 90 },
+      "status=empty,facing=south": { "model": "mcppmod:block/soup_pot_empty", "y": 180 },
+      "status=empty,facing=west": { "model": "mcppmod:block/soup_pot_empty", "y": 270 },
+
+      "status=full,facing=north": { "model": "mcppmod:block/soup_pot_full" },
+      "status=full,facing=east": { "model": "mcppmod:block/soup_pot_full", "y": 90 },
+      "status=full,facing=south": { "model": "mcppmod:block/soup_pot_full", "y": 180 },
+      "status=full,facing=west": { "model": "mcppmod:block/soup_pot_full", "y": 270 }
+    }
+}

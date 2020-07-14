@@ -1,6 +1,8 @@
 package com.eonzenx.mcppmod;
 
+import com.eonzenx.mcppmod.client.gui.SoupPotBlockScreen;
 import com.eonzenx.mcppmod.util.*;
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -28,6 +30,8 @@ public class MCPPMod
         // Register the doClientStuff method for modloading
         mcppmodEventBus.addListener(this::doClientStuff);
 
+        TileEntityRegisterHandler.init();
+        ContainerRegistryHandler.init();
         FoodRegistryHandler.init();
         ToolRegistryHandler.init();
         ArmorRegistryHandler.init();
@@ -41,7 +45,7 @@ public class MCPPMod
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+        ScreenManager.registerFactory(ContainerRegistryHandler.SOUP_POT_CONTAINER.get(), SoupPotBlockScreen::new);
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)

@@ -10,12 +10,12 @@
   {
     "i":
     {
-      "item": "mcpp:alchemists_gold_ingot"
+      "item": "mcppmod:alchemists_gold_ingot"
     }
   },
   "result":
   {
-    "item": "mcpp:volatile_leggings",
+    "item": "mcppmod:volatile_leggings",
     "count": 1
   }
 }

@@ -10,7 +10,7 @@
   {
     "i":
     {
-      "item": "mcpp:alchemists_gold_ingot"
+      "item": "mcppmod:alchemists_gold_ingot"
     },
     "s":
     {
@@ -19,7 +19,7 @@
   },
   "result":
   {
-    "item": "mcpp:volatile_pickaxe",
+    "item": "mcppmod:volatile_pickaxe",
     "count": 1
   }
 }

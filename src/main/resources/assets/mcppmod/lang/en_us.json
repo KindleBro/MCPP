@@ -24,7 +24,7 @@
   "item.mcppmod.volatile_sword": "Volatile Sword",
 
   "_comment05": "Blocks goes here",
-
+  "block.mcppmod.soup_pot" : "Soup Pot",
 
   "_comment06": "Armor goes here",
   "item.mcppmod.volatile_helmet": "Volatile Helmet",
@@ -33,5 +33,9 @@
   "item.mcppmod.volatile_boots": "Volatile Boots",
 
   "_comment07": "Fun stuff goes here",
-  "block.mcppmod.h_nuke" : "Harrison's Nuke"
+  "block.mcppmod.h_nuke" : "Harrison's Nuke",
+
+  "_comment08": "UI stuff goes here",
+  "screen.mcppmod.soup_pot": "Soup Pot",
+  "screen.mcppmod.soup_pot_cook": "Cook"
 }

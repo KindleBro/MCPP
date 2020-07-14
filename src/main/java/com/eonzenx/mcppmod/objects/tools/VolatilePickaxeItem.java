@@ -4,6 +4,7 @@ import com.eonzenx.mcppmod.objects.tiers.VolatileItemTier;
 import com.eonzenx.mcppmod.util.CustomItemGroups;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +19,13 @@ public class VolatilePickaxeItem extends PickaxeItem {
     @Override
     public boolean onBlockDestroyed(ItemStack stack, World worldIn, BlockState state, BlockPos pos, LivingEntity entityLiving) {
         entityLiving.getEntityWorld().createExplosion(entityLiving, entityLiving.getPosX(), entityLiving.getPosY(), entityLiving.getPosZ(), VolatileItemTier.EXPLOSION_POWER, Explosion.Mode.BREAK);
-        return super.onBlockDestroyed(stack, worldIn, state, pos, entityLiving);
+        if (!worldIn.isRemote) {
+            stack.damageItem(1, entityLiving, (player) -> {
+                player.sendBreakAnimation(EquipmentSlotType.MAINHAND);
+            });
+        }
+
+        return true;
     }
 
     @Override
