@@ -14,17 +14,10 @@ import net.minecraft.world.Explosion;
 import javax.annotation.Nullable;
 import java.util.function.Consumer;
 
-public class VolatileArmorItem extends ArmorItem {
+public class CharredWoodArmorItem extends ArmorItem {
 
-    public VolatileArmorItem(EquipmentSlotType slot) {
-        super(MCPPModArmorMaterials.VOLATILE, slot, new Properties().group(CustomItemGroups.CRAFTING_TAB));
-    }
-
-
-    @Override
-    public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
-        entity.getEntityWorld().createExplosion(entity, entity.getPosX(), entity.getPosY(), entity.getPosZ(), VolatileItemTier.EXPLOSION_POWER, Explosion.Mode.BREAK);
-        return amount;
+    public CharredWoodArmorItem(EquipmentSlotType slot) {
+        super(MCPPModArmorMaterials.CHARRED_WOOD, slot, new Properties().group(CustomItemGroups.CRAFTING_TAB));
     }
 
     @Nullable
@@ -34,10 +27,10 @@ public class VolatileArmorItem extends ArmorItem {
             case HEAD:
             case CHEST:
             case FEET:
-                return MCPPMod.MOD_ID + ":textures/models/armor/volatile_layer_1.png";
+                return MCPPMod.MOD_ID + ":textures/models/armor/charred_layer_1.png";
             case LEGS:
-                return MCPPMod.MOD_ID + ":textures/models/armor/volatile_layer_2.png";
+                return MCPPMod.MOD_ID + ":textures/models/armor/charred_layer_2.png";
         }
-        return MCPPMod.MOD_ID + ":textures/models/armor/volatile_layer_1.png";
+        return MCPPMod.MOD_ID + ":textures/models/armor/charred_layer_1.png";
     }
 }
