@@ -1,6 +1,7 @@
 package com.eonzenx.mcppmod;
 
 import com.eonzenx.mcppmod.client.gui.SoupPotBlockScreen;
+import com.eonzenx.mcppmod.networking.MCPPPacketHandler;
 import com.eonzenx.mcppmod.util.*;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
@@ -46,6 +47,7 @@ public class MCPPMod
     private void setup(final FMLCommonSetupEvent event)
     {
         ScreenManager.registerFactory(ContainerRegistryHandler.SOUP_POT_CONTAINER.get(), SoupPotBlockScreen::new);
+        MCPPPacketHandler.registerMessages();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)

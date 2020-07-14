@@ -1,6 +1,8 @@
 package com.eonzenx.mcppmod.client.gui;
 
 import com.eonzenx.mcppmod.MCPPMod;
+import com.eonzenx.mcppmod.networking.MCPPPacketHandler;
+import com.eonzenx.mcppmod.networking.PacketStartCookingSoup;
 import com.eonzenx.mcppmod.objects.containers.SoupPotBlockContainer;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -8,6 +10,7 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.widget.button.ImageButton;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
@@ -34,7 +37,10 @@ public class SoupPotBlockScreen extends ContainerScreen<SoupPotBlockContainer> {
                 new Button.IPressable() {
                     @Override
                     public void onPress(Button button) {
-                        System.out.println("fck");
+                        TileEntity tileEntity = container.getTileEntity();
+                        MCPPPacketHandler.sendToServer(new PacketStartCookingSoup(tileEntity.getPos()));
+
+                        playerInventory.player.closeScreen();
                     }
                 }));
     }

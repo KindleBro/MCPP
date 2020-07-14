@@ -30,8 +30,6 @@ import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeBlock;
 import net.minecraftforge.fml.network.NetworkHooks;
 
-import javax.annotation.Nullable;
-
 public class SoupPotBlock extends ContainerBlock implements IForgeBlock {
 
     public enum Status implements IStringSerializable {
@@ -81,7 +79,8 @@ public class SoupPotBlock extends ContainerBlock implements IForgeBlock {
     public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit) {
         if (!world.isRemote) {
             TileEntity tileEntity = world.getTileEntity(pos);
-            if (tileEntity instanceof SoupPotBlockTileEntity) {
+            if (tileEntity instanceof SoupPotBlockTileEntity && !((SoupPotBlockTileEntity)tileEntity).isCooking()) {
+                // If the soup pot isn't cooking, then it is fine to start cooking
                 INamedContainerProvider containerProvider = new INamedContainerProvider() {
                     @Override
                     public ITextComponent getDisplayName() {

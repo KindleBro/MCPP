@@ -19,7 +19,7 @@ public class SoupPotBlockContainer extends Container {
     public SoupPotBlockContainer(int windowId, World world, BlockPos pos, PlayerInventory playerInventory, PlayerEntity playerEntity) {
         super(ContainerRegistryHandler.SOUP_POT_CONTAINER.get(), windowId);
 
-        tileEntity = world.getTileEntity(pos);
+        this.tileEntity = world.getTileEntity(pos);
 
         // Inventory
         for(int i = 0; i < 3; ++i) {
@@ -64,5 +64,9 @@ public class SoupPotBlockContainer extends Container {
     public ItemStack transferStackInSlot(PlayerEntity playerIn, int index) {
         System.out.println("Item stack at "+index+" shift clicked");
         return ItemStack.EMPTY;
+    }
+
+    public TileEntity getTileEntity() {
+        return tileEntity;
     }
 }
