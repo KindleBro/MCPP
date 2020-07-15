@@ -39,8 +39,6 @@ public class SoupPotBlockScreen extends ContainerScreen<SoupPotBlockContainer> {
                     public void onPress(Button button) {
                         TileEntity tileEntity = container.getTileEntity();
                         MCPPPacketHandler.sendToServer(new PacketStartCookingSoup(tileEntity.getPos()));
-
-                        playerInventory.player.closeScreen();
                     }
                 }));
     }

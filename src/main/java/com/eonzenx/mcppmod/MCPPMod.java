@@ -3,6 +3,7 @@ package com.eonzenx.mcppmod;
 import com.eonzenx.mcppmod.client.gui.SoupPotBlockScreen;
 import com.eonzenx.mcppmod.networking.MCPPPacketHandler;
 import com.eonzenx.mcppmod.util.*;
+import com.eonzenx.mcppmod.util.soup.SoupRecipes;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,6 +40,7 @@ public class MCPPMod
         BlockRegistryHandler.init();
         ItemRegistryHandler.init();
 
+        SoupRecipes.init();
         instance = this;
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

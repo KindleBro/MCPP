@@ -1,6 +1,7 @@
 package com.eonzenx.mcppmod.networking;
 
 import com.eonzenx.mcppmod.objects.tileentities.SoupPotBlockTileEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,7 @@ public class PacketStartCookingSoup {
             TileEntity tileEntity = ctx.get().getSender().getServerWorld().getTileEntity(pos);
             if(tileEntity instanceof SoupPotBlockTileEntity){
                 SoupPotBlockTileEntity soupPotBlockTileEntity = (SoupPotBlockTileEntity) tileEntity;
-                soupPotBlockTileEntity.startCooking();
+                soupPotBlockTileEntity.startCooking(ctx.get().getSender());
             }
         });
         return true;

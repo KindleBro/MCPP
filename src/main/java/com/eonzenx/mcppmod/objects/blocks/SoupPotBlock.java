@@ -10,6 +10,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.DirectionProperty;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
@@ -29,6 +30,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.extensions.IForgeBlock;
 import net.minecraftforge.fml.network.NetworkHooks;
+
+import java.util.Random;
 
 public class SoupPotBlock extends ContainerBlock implements IForgeBlock {
 
@@ -118,5 +121,16 @@ public class SoupPotBlock extends ContainerBlock implements IForgeBlock {
     @Override
     public TileEntity createNewTileEntity(IBlockReader worldIn) {
         return new SoupPotBlockTileEntity();
+    }
+
+    @Override
+    public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+        if(worldIn.getBlockState(pos).get(STATUS) == Status.CLOSED) {
+            double d0 = (double)pos.getX()+rand.nextFloat()*0.5;
+            double d1 = (double)pos.getY()+rand.nextFloat()*0.5;
+            double d2 = (double)pos.getZ()+rand.nextFloat()*0.5;
+
+            worldIn.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+        }
     }
 }

@@ -3,7 +3,9 @@ package com.eonzenx.mcppmod.objects.tileentities;
 import com.eonzenx.mcppmod.objects.blocks.SoupPotBlock;
 import com.eonzenx.mcppmod.util.ItemRegistryHandler;
 import com.eonzenx.mcppmod.util.TileEntityRegisterHandler;
+import com.eonzenx.mcppmod.util.soup.SoupUtils;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -41,11 +43,13 @@ public class SoupPotBlockTileEntity extends TileEntity implements ITickableTileE
             ticksLeft--;
             if(ticksLeft <= 0){
                 isCooking = false;
-
                 System.out.println("Cooked!");
 
-                // put cooking result in the slot
-                itemHandler.insertItem(5, new ItemStack(Items.COOKED_PORKCHOP, 4), false);
+                if(itemHandler.getStackInSlot(5).isEmpty()){
+                    getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.EMPTY));
+                } else {
+                    getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.FULL));
+                }
                 markDirty();
             }
         }
@@ -62,12 +66,12 @@ public class SoupPotBlockTileEntity extends TileEntity implements ITickableTileE
             protected void onContentsChanged(int slot) {
                 // To make sure the TE persists when the chunk is saved later we need to
                 // mark it dirty every time the item handler changes
-                if(slot == 5){
-                    if(getStackInSlot(5).isEmpty()){
-                        getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.EMPTY));
-                    } else {
-                        getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.FULL));
-                    }
+                if(isCooking) {
+                    getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.CLOSED));
+                } else if(itemHandler.getStackInSlot(5).isEmpty()){
+                    getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.EMPTY));
+                } else {
+                    getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.FULL));
                 }
                 markDirty();
             }
@@ -115,10 +119,14 @@ public class SoupPotBlockTileEntity extends TileEntity implements ITickableTileE
         return super.getCapability(cap, side);
     }
 
-    public void startCooking(){
-        isCooking = true;
-        ticksLeft = 100;
-        getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.CLOSED));
+    public void startCooking(PlayerEntity player){
+        if(SoupUtils.attemptCooking(player, this)){
+            System.out.println("Wow! This was a successful thing!");
+            player.closeScreen();
+            isCooking = true;
+            ticksLeft = 100;
+            getWorld().setBlockState(getPos(), getBlockState().with(SoupPotBlock.STATUS, SoupPotBlock.Status.CLOSED));
+        }
     }
 
     public boolean isCooking(){
