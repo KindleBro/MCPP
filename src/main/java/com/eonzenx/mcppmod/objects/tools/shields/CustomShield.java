@@ -1,31 +1,25 @@
 package com.eonzenx.mcppmod.objects.tools.shields;
 
-import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.util.registry_handlers.CustomItemGroups;
+import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ShieldItem;
+import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvents;
-import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
 
-public class CustomShield extends ShieldItem {
+public class CustomShield extends Item {
 
     private final ShieldTier tier;
 
     public CustomShield(ShieldTier tier, Item.Properties properties) {
         super(properties.group(CustomItemGroups.COMBAT_TAB));
         this.tier = tier;
+        DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
     }
 
     public ShieldTier getTier() {
@@ -38,6 +32,11 @@ public class CustomShield extends ShieldItem {
     }
 
     @Override
+    public int getUseDuration(ItemStack stack) {
+        return 72000;
+    }
+
+    @Override
     public boolean isDamageable() {
         return true;
     }
@@ -45,5 +44,12 @@ public class CustomShield extends ShieldItem {
     @Override
     public boolean getIsRepairable(@Nullable ItemStack toRepair, @Nullable ItemStack repair) {
         return tier.getRepairMaterial() == Ingredient.fromStacks(repair);
+    }
+
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+        ItemStack itemstack = playerIn.getHeldItem(handIn);
+        playerIn.setActiveHand(handIn);
+        return ActionResult.resultConsume(itemstack);
     }
 }
