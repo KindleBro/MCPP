@@ -1,6 +1,6 @@
 package com.eonzenx.mcppmod;
 
-import com.eonzenx.mcppmod.util.*;
+import com.eonzenx.mcppmod.util.registry_handlers.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -29,10 +29,10 @@ public class MCPPMod
         mcppmodEventBus.addListener(this::doClientStuff);
 
         FoodRegistryHandler.init();
-        ToolRegistryHandler.init();
         ArmorRegistryHandler.init();
         BlockRegistryHandler.init();
         ItemRegistryHandler.init();
+        ToolRegistryHandler.init();
 
         instance = this;
         // Register ourselves for server and other game events we are interested in
