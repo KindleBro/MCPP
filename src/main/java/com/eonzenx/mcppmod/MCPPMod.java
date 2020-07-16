@@ -1,6 +1,5 @@
 package com.eonzenx.mcppmod;
 
-import com.eonzenx.mcppmod.util.*;
 import com.eonzenx.mcppmod.client.gui.SoupPotBlockScreen;
 import com.eonzenx.mcppmod.networking.MCPPPacketHandler;
 import com.eonzenx.mcppmod.util.registry_handlers.*;

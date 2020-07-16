@@ -1,12 +1,11 @@
 package com.eonzenx.mcppmod.objects.tileentities;
 
 import com.eonzenx.mcppmod.objects.blocks.SoupPotBlock;
-import com.eonzenx.mcppmod.util.TileEntityRegisterHandler;
+import com.eonzenx.mcppmod.util.registry_handlers.TileEntityRegisterHandler;
 import com.eonzenx.mcppmod.util.soup.SoupUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;

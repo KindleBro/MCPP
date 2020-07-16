@@ -1,6 +1,6 @@
 package com.eonzenx.mcppmod.objects.containers;
 
-import com.eonzenx.mcppmod.util.ContainerRegistryHandler;
+import com.eonzenx.mcppmod.util.registry_handlers.ContainerRegistryHandler;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
