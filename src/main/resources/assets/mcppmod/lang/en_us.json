@@ -11,10 +11,11 @@
   "item.mcppmod.peach": "Peach",
   "item.mcppmod.gourd": "Gourd",
   "item.mcppmod.jalapenos": "Jalapenos",
-  "item.mcppmod.odd_berries": "Odd Berries",
+  "item.mcppmod.dragonfruit": "Dragonfruit",
 
   "_comment03": "Items goes here",
   "item.mcppmod.alchemists_gold_ingot": "Alchemists Gold Ingot",
+  "item.mcppmod.odd_berries": "Odd Berries",
   "item.mcppmod.charred_wood": "Charred Wood",
 
   "_comment04": "Tools goes here",
@@ -25,6 +26,8 @@
   "item.mcppmod.volatile_sword": "Volatile Sword",
 
   "_comment05": "Blocks goes here",
+  "block.mcppmod.snow_berry_bush": "Snow Berry Bush",
+  "block.mcppmod.jalapeno_plant": "Jalapeno Plant",
   "block.mcppmod.soup_pot" : "Soup Pot",
 
   "_comment06": "Armor goes here",

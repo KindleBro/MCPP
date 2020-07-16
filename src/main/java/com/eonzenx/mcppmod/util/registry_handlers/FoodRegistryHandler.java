@@ -23,5 +23,5 @@ public class FoodRegistryHandler
     public static final RegistryObject<Item> PEACH = FOOD.register("peach", Peach::new);
     public static final RegistryObject<Item> GOURD = FOOD.register("gourd", Gourd::new);
     public static final RegistryObject<Item> JALAPENOS = FOOD.register("jalapenos", Jalapenos::new);
-    public static final RegistryObject<Item> ODD_BERRIES = FOOD.register("odd_berries", OddBerries::new);
+    public static final RegistryObject<Item> DRAGON_FRUIT = FOOD.register("dragonfruit", Dragonfruit::new);
 }

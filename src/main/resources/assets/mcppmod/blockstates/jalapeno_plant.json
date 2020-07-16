@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "age=0": { "model": "mcppmod:block/jalapeno_plant/stage0" },
+    "age=1": { "model": "mcppmod:block/jalapeno_plant/stage1" },
+    "age=2": { "model": "mcppmod:block/jalapeno_plant/stage2" },
+    "age=3": { "model": "mcppmod:block/jalapeno_plant/stage3" },
+    "age=4": { "model": "mcppmod:block/jalapeno_plant/stage4" },
+    "age=5": { "model": "mcppmod:block/jalapeno_plant/stage5" },
+    "age=6": { "model": "mcppmod:block/jalapeno_plant/stage6" },
+    "age=7": { "model": "mcppmod:block/jalapeno_plant/stage7" }
+  }
+}

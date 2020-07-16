@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mcppmod:block/jalapeno_plant/stage0"
+  }
+}

@@ -1,15 +1,14 @@
 package com.eonzenx.mcppmod.objects.armor;
 
 import com.eonzenx.mcppmod.MCPPMod;
-import com.eonzenx.mcppmod.objects.tiers.MCPPModArmorMaterials;
 import com.eonzenx.mcppmod.objects.tiers.VolatileItemTier;
+import com.eonzenx.mcppmod.objects.tiers.MCPPModArmorMaterials;
 import com.eonzenx.mcppmod.util.registry_handlers.CustomItemGroups;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.world.Explosion;
 
 import javax.annotation.Nullable;
@@ -20,7 +19,6 @@ public class VolatileArmorItem extends ArmorItem {
     public VolatileArmorItem(EquipmentSlotType slot) {
         super(MCPPModArmorMaterials.VOLATILE, slot, new Properties().group(CustomItemGroups.CRAFTING_TAB));
     }
-
 
     @Override
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
