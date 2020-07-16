@@ -16,6 +16,7 @@ public class ClientEventBusSubscriber {
     public static void clientSetup(FMLClientSetupEvent event)
     {
         RenderTypeLookup.setRenderLayer(BlockRegistryHandler.SNOW_BERRY_BUSH.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockRegistryHandler.JALAPENO_PLANT.get(), RenderType.getCutout());
     }
 
 }
