@@ -1,6 +1,7 @@
 package com.eonzenx.mcppmod;
 
 import com.eonzenx.mcppmod.client.gui.SoupPotBlockScreen;
+import com.eonzenx.mcppmod.client.KeyBindings;
 import com.eonzenx.mcppmod.networking.MCPPPacketHandler;
 import com.eonzenx.mcppmod.util.registry_handlers.*;
 import com.eonzenx.mcppmod.util.soup.SoupRecipes;
@@ -15,6 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -75,6 +77,10 @@ public class MCPPMod
         // Allows the crops to have transparency
         RenderTypeLookup.setRenderLayer(BlockRegistryHandler.SNOW_BERRY_BUSH.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(BlockRegistryHandler.JALAPENO_PLANT.get(), RenderType.getCutout());
+
+        // Key bindings
+        ClientRegistry.registerKeyBinding(KeyBindings.DASH);
+
     }
 
 }
