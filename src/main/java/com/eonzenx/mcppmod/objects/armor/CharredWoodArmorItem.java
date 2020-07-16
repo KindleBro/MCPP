@@ -1,23 +1,19 @@
 package com.eonzenx.mcppmod.objects.armor;
 
 import com.eonzenx.mcppmod.MCPPMod;
-import com.eonzenx.mcppmod.objects.tiers.MCPPModArmorMaterials;
-import com.eonzenx.mcppmod.objects.tiers.VolatileItemTier;
+import com.eonzenx.mcppmod.objects.tiers.MMArmorMaterials;
 import com.eonzenx.mcppmod.util.registry_handlers.CustomItemGroups;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.Explosion;
 
 import javax.annotation.Nullable;
-import java.util.function.Consumer;
 
 public class CharredWoodArmorItem extends ArmorItem {
 
     public CharredWoodArmorItem(EquipmentSlotType slot) {
-        super(MCPPModArmorMaterials.CHARRED_WOOD, slot, new Properties().group(CustomItemGroups.CRAFTING_TAB));
+        super(MMArmorMaterials.CHARRED_WOOD, slot, new Properties().group(CustomItemGroups.CRAFTING_TAB));
     }
 
     @Nullable

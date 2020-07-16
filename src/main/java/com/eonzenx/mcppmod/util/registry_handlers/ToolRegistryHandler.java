@@ -2,11 +2,9 @@ package com.eonzenx.mcppmod.util.registry_handlers;
 
 import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.objects.tools.shields.CustomShield;
-import com.eonzenx.mcppmod.objects.tools.shields.ShieldTier;
+import com.eonzenx.mcppmod.objects.tiers.MMShieldTier;
 import com.eonzenx.mcppmod.objects.tools.volatile_items.*;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemModelsProperties;
-import net.minecraft.item.Items;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -29,10 +27,10 @@ public class ToolRegistryHandler
     public static final RegistryObject<Item> VOLATILE_SHOVEL = TOOLS.register("volatile_shovel", VolatileShovelItem::new);
 
     // Combat
-    public static final RegistryObject<Item> WOODEN_SHIELD = TOOLS.register("wooden_shield", () -> new CustomShield(ShieldTier.WOOD, new Item.Properties()));
-    public static final RegistryObject<Item> STONE_SHIELD = TOOLS.register("stone_shield", () -> new CustomShield(ShieldTier.STONE, new Item.Properties()));
-    public static final RegistryObject<Item> IRON_SHIELD = TOOLS.register("iron_shield", () -> new CustomShield(ShieldTier.IRON, new Item.Properties()));
-    public static final RegistryObject<Item> GOLD_SHIELD = TOOLS.register("gold_shield", () -> new CustomShield(ShieldTier.GOLD, new Item.Properties()));
-    public static final RegistryObject<Item> DIAMOND_SHIELD = TOOLS.register("diamond_shield", () -> new CustomShield(ShieldTier.DIAMOND, new Item.Properties()));
-    public static final RegistryObject<Item> NETHERITE_SHIELD = TOOLS.register("netherite_shield", () -> new CustomShield(ShieldTier.NETHERITE, new Item.Properties()));
+    public static final RegistryObject<Item> WOODEN_SHIELD = TOOLS.register("wooden_shield", () -> new CustomShield(MMShieldTier.WOOD, new Item.Properties()));
+    public static final RegistryObject<Item> STONE_SHIELD = TOOLS.register("stone_shield", () -> new CustomShield(MMShieldTier.STONE, new Item.Properties()));
+    public static final RegistryObject<Item> IRON_SHIELD = TOOLS.register("iron_shield", () -> new CustomShield(MMShieldTier.IRON, new Item.Properties()));
+    public static final RegistryObject<Item> GOLD_SHIELD = TOOLS.register("gold_shield", () -> new CustomShield(MMShieldTier.GOLD, new Item.Properties()));
+    public static final RegistryObject<Item> DIAMOND_SHIELD = TOOLS.register("diamond_shield", () -> new CustomShield(MMShieldTier.DIAMOND, new Item.Properties()));
+    public static final RegistryObject<Item> NETHERITE_SHIELD = TOOLS.register("netherite_shield", () -> new CustomShield(MMShieldTier.NETHERITE, new Item.Properties()));
 }

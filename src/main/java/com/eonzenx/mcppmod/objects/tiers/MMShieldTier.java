@@ -1,11 +1,10 @@
-package com.eonzenx.mcppmod.objects.tools.shields;
+package com.eonzenx.mcppmod.objects.tiers;
 
-import com.eonzenx.mcppmod.objects.tiers.IShieldTier;
 import com.eonzenx.mcppmod.util.registry_handlers.ItemRegistryHandler;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 
-public enum ShieldTier implements IShieldTier {
+public enum MMShieldTier implements IShieldTier {
 
     WOOD(10, 30, 15, Ingredient.fromItems(Items.OAK_PLANKS)),
     STONE(20, 40, 5, Ingredient.fromItems(Items.COBBLESTONE)),  // I assume this is stone because stone tools have this tag
@@ -20,7 +19,7 @@ public enum ShieldTier implements IShieldTier {
     private final int enchantability;
     private final Ingredient repairableMaterial;
 
-    ShieldTier(int maxUses, int damageReduction, int enchantability, Ingredient repairableMaterial) {
+    MMShieldTier(int maxUses, int damageReduction, int enchantability, Ingredient repairableMaterial) {
         this.maxUses = maxUses;
         this.damageReduction = damageReduction / 100.f;
         this.enchantability = enchantability;

@@ -13,7 +13,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.function.Supplier;
 
-public enum MCPPModArmorMaterials implements IArmorMaterial {
+public enum MMArmorMaterials implements IArmorMaterial {
 
     CHARRED_WOOD(MCPPMod.MOD_ID + ":charred_wood", 5, new int [] { 1, 1, 2, 1 }, 6,
             SoundEvents.ITEM_ARMOR_EQUIP_TURTLE, 0.0f, () -> { return Ingredient.fromItems(ItemRegistryHandler.CHARRED_WOOD.get()); }, 0.0f),
@@ -34,9 +34,9 @@ public enum MCPPModArmorMaterials implements IArmorMaterial {
     private final Supplier<Ingredient> repairMaterial;
     private final float netheriteThing;
 
-    MCPPModArmorMaterials(String name, int maxDamageFactor, int[] damageReductionAmountArray,
-                          int enchantibility, SoundEvent soundEvent, float toughness,
-                          Supplier<Ingredient> repairMaterial, float netheriteThing)
+    MMArmorMaterials(String name, int maxDamageFactor, int[] damageReductionAmountArray,
+                     int enchantibility, SoundEvent soundEvent, float toughness,
+                     Supplier<Ingredient> repairMaterial, float netheriteThing)
     {
         this.name = name;
         this.maxDamageFactor = maxDamageFactor;

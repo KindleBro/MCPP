@@ -1,5 +1,6 @@
 package com.eonzenx.mcppmod.objects.tools.shields;
 
+import com.eonzenx.mcppmod.objects.tiers.MMShieldTier;
 import com.eonzenx.mcppmod.util.registry_handlers.CustomItemGroups;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.entity.LivingEntity;
@@ -14,16 +15,16 @@ import javax.annotation.Nullable;
 
 public class CustomShield extends Item {
 
-    private final ShieldTier tier;
+    private final MMShieldTier tier;
 
-    public CustomShield(ShieldTier tier, Item.Properties properties) {
+    public CustomShield(MMShieldTier tier, Item.Properties properties) {
         super(properties.group(CustomItemGroups.COMBAT_TAB));
         this.tier = tier;
 
         DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
     }
 
-    public ShieldTier getTier() {
+    public MMShieldTier getTier() {
         return tier;
     }
 

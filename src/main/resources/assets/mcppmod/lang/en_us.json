@@ -25,6 +25,14 @@
   "item.mcppmod.volatile_shovel": "Volatile Shovel",
   "item.mcppmod.volatile_sword": "Volatile Sword",
 
+  "item.mcppmod.wooden_shield": "Wooden Shield",
+  "item.mcppmod.stone_shield": "Stone Shield",
+  "item.mcppmod.iron_shield": "Iron Shield",
+  "item.mcppmod.gold_shield": "Gold Shield",
+  "item.mcppmod.diamond_shield": "Diamond Shield",
+  "item.mcppmod.netherite_shield": "Netherite Shield",
+
+
   "_comment05": "Blocks goes here",
   "block.mcppmod.snow_berry_bush": "Snow Berry Bush",
   "block.mcppmod.jalapeno_plant": "Jalapeno Plant",
@@ -47,7 +55,7 @@
   "screen.mcppmod.soup_pot": "Soup Pot",
   "screen.mcppmod.soup_pot_cook": "Cook",
 
-  "_comment07": "Death stuff goes here",
-  "death.attack.blockDamage": "%1$s died trying to protect himself",
-  "death.attack.blockDamage.player": "%1$s's shield couldn't protect him from %2$s"
+  "_comment09": "Death stuff goes here",
+  "death.attack.blockDamage": "%1$s died trying to protect themselves",
+  "death.attack.blockDamage.player": "%1$s's shield couldn't protect them from %2$s"
 }
