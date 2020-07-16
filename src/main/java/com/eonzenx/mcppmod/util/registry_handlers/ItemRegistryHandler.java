@@ -1,8 +1,9 @@
-package com.eonzenx.mcppmod.util;
+package com.eonzenx.mcppmod.util.registry_handlers;
 
 import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.objects.items.AlchemistsGoldIngot;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;

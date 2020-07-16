@@ -1,6 +1,6 @@
 package com.eonzenx.mcppmod.objects.food;
 
-import com.eonzenx.mcppmod.util.CustomItemGroups;
+import com.eonzenx.mcppmod.util.registry_handlers.CustomItemGroups;
 import net.minecraft.item.Item;
 
 public class FoodBase extends Item
