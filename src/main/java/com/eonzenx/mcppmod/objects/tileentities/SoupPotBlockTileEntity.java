@@ -1,7 +1,6 @@
 package com.eonzenx.mcppmod.objects.tileentities;
 
 import com.eonzenx.mcppmod.objects.blocks.SoupPotBlock;
-import com.eonzenx.mcppmod.util.ItemRegistryHandler;
 import com.eonzenx.mcppmod.util.TileEntityRegisterHandler;
 import com.eonzenx.mcppmod.util.soup.SoupUtils;
 import net.minecraft.block.BlockState;

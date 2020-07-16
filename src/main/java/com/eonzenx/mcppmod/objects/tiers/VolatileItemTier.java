@@ -1,6 +1,6 @@
 package com.eonzenx.mcppmod.objects.tiers;
 
-import com.eonzenx.mcppmod.util.ItemRegistryHandler;
+import com.eonzenx.mcppmod.util.registry_handlers.ItemRegistryHandler;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemTier;
 import net.minecraft.item.crafting.Ingredient;

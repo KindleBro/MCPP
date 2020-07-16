@@ -1,7 +1,7 @@
 package com.eonzenx.mcppmod.objects.tiers;
 
 import com.eonzenx.mcppmod.MCPPMod;
-import com.eonzenx.mcppmod.util.ItemRegistryHandler;
+import com.eonzenx.mcppmod.util.registry_handlers.ItemRegistryHandler;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Items;

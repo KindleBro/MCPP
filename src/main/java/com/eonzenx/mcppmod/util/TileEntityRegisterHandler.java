@@ -2,6 +2,7 @@ package com.eonzenx.mcppmod.util;
 
 import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.objects.tileentities.SoupPotBlockTileEntity;
+import com.eonzenx.mcppmod.util.registry_handlers.BlockRegistryHandler;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

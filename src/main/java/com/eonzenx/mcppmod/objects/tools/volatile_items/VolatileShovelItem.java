@@ -1,20 +1,19 @@
-package com.eonzenx.mcppmod.objects.tools;
-
+package com.eonzenx.mcppmod.objects.tools.volatile_items;
 
 import com.eonzenx.mcppmod.objects.tiers.VolatileItemTier;
-import com.eonzenx.mcppmod.util.CustomItemGroups;
+import com.eonzenx.mcppmod.util.registry_handlers.CustomItemGroups;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.HoeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class VolatileHoeItem extends HoeItem {
-    public VolatileHoeItem() {
-        super(new VolatileItemTier(), VolatileItemTier.HOE_ATTACK_DAMAGE, VolatileItemTier.HOE_ATTACK_SPEED, new Properties().group(CustomItemGroups.CRAFTING_TAB));
+public class VolatileShovelItem extends ShovelItem {
+    public VolatileShovelItem() {
+        super(new VolatileItemTier(), VolatileItemTier.SHOVEL_ATTACK_DAMAGE, VolatileItemTier.SHOVEL_ATTACK_SPEED, new Properties().group(CustomItemGroups.CRAFTING_TAB));
     }
 
     @Override

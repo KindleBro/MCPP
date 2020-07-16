@@ -1,4 +1,4 @@
-package com.eonzenx.mcppmod.util;
+package com.eonzenx.mcppmod.util.registry_handlers;
 
 import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.objects.food.*;
