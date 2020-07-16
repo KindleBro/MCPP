@@ -19,6 +19,7 @@ public class CustomShield extends Item {
     public CustomShield(ShieldTier tier, Item.Properties properties) {
         super(properties.group(CustomItemGroups.COMBAT_TAB));
         this.tier = tier;
+
         DispenserBlock.registerDispenseBehavior(this, ArmorItem.DISPENSER_BEHAVIOR);
     }
 
@@ -46,10 +47,20 @@ public class CustomShield extends Item {
         return tier.getRepairMaterial() == Ingredient.fromStacks(repair);
     }
 
+    /**
+     * returns the action that specifies what animation to play when the items is being used
+     */
+    @Override
+    public UseAction getUseAction(ItemStack stack) {
+        return UseAction.BLOCK;
+    }
+
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
         playerIn.setActiveHand(handIn);
         return ActionResult.resultConsume(itemstack);
     }
+
+
 }

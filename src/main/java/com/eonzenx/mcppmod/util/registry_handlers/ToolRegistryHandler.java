@@ -5,6 +5,7 @@ import com.eonzenx.mcppmod.objects.tools.shields.CustomShield;
 import com.eonzenx.mcppmod.objects.tools.shields.ShieldTier;
 import com.eonzenx.mcppmod.objects.tools.volatile_items.*;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.item.Items;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

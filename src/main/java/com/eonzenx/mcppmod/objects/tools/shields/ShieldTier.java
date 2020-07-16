@@ -14,7 +14,7 @@ public enum ShieldTier implements IShieldTier {
     IRON(35, 60, 14, Ingredient.fromItems(Items.IRON_INGOT)),
     GOLD(15, 60, 22, Ingredient.fromItems(Items.GOLD_INGOT)),
     DIAMOND(50, 75, 10, Ingredient.fromItems(Items.DIAMOND)),
-    NETHERITE(50, 75, 15, Ingredient.fromItems(Items.NETHERITE_INGOT)),
+    NETHERITE(50, 75, 15, Ingredient.fromItems(Items.DIAMOND)),
     VOLATILE(1, 100, 22, Ingredient.fromItems(ItemRegistryHandler.ALCHEMISTS_GOLD_INGOT.get()));
 
     private final int maxUses;
