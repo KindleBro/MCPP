@@ -2,6 +2,7 @@ package com.eonzenx.mcppmod.util.registry_handlers;
 
 import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.objects.items.AlchemistsGoldIngot;
+import com.eonzenx.mcppmod.objects.items.CharredWood;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraftforge.fml.RegistryObject;
@@ -19,4 +20,5 @@ public class ItemRegistryHandler
     }
 
     public static final RegistryObject<Item> ALCHEMISTS_GOLD_INGOT = ITEMS.register("alchemists_gold_ingot", AlchemistsGoldIngot::new);
+    public static final RegistryObject<Item> CHARRED_WOOD = ITEMS.register("charred_wood", CharredWood::new);
 }

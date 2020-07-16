@@ -1,5 +1,10 @@
 package com.eonzenx.mcppmod;
 
+import com.eonzenx.mcppmod.client.gui.SoupPotBlockScreen;
+import com.eonzenx.mcppmod.networking.MCPPPacketHandler;
+import com.eonzenx.mcppmod.util.*;
+import com.eonzenx.mcppmod.util.soup.SoupRecipes;
+import net.minecraft.client.gui.ScreenManager;
 import com.eonzenx.mcppmod.util.registry_handlers.*;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
@@ -36,12 +41,15 @@ public class MCPPMod
         // Register the doClientStuff method for modloading
         mcppmodEventBus.addListener(this::doClientStuff);
 
+        TileEntityRegisterHandler.init();
+        ContainerRegistryHandler.init();
         FoodRegistryHandler.init();
         ArmorRegistryHandler.init();
         BlockRegistryHandler.init();
         ItemRegistryHandler.init();
         ToolRegistryHandler.init();
 
+        SoupRecipes.init();
         instance = this;
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -49,7 +57,8 @@ public class MCPPMod
 
     private void setup(final FMLCommonSetupEvent event)
     {
-
+        ScreenManager.registerFactory(ContainerRegistryHandler.SOUP_POT_CONTAINER.get(), SoupPotBlockScreen::new);
+        MCPPPacketHandler.registerMessages();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event)

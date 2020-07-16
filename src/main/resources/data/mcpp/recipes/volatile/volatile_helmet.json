@@ -9,12 +9,12 @@
   {
     "i":
     {
-      "item": "mcpp:alchemists_gold_ingot"
+      "item": "mcppmod:alchemists_gold_ingot"
     }
   },
   "result":
   {
-    "item": "mcpp:volatile_helmet",
+    "item": "mcppmod:volatile_helmet",
     "count": 1
   }
 }
