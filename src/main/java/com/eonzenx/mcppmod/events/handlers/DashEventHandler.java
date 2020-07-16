@@ -43,6 +43,8 @@ public class DashEventHandler {
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw + 90))
                                 .mul(dashReduction, dashReduction, dashReduction));
                 break;
+            default:
+                playerDashedMovement = playerMovement.add(new Vector3d(0.0f, 1.0f, 0.0f));
         }
         player.setMotion(playerDashedMovement.x, playerDashedMovement.y + 0.35f, playerDashedMovement.z);
     }
