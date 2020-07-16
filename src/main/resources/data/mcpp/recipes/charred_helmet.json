@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  ["iii",
+   "i i",
+   "   "
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "mcppmod:charred_wood"
+    }
+  },
+  "result":
+  {
+    "item": "mcppmod:charred_helmet",
+    "count": 1
+  }
+}

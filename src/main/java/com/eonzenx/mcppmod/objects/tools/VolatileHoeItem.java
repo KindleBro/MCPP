@@ -2,7 +2,7 @@ package com.eonzenx.mcppmod.objects.tools;
 
 
 import com.eonzenx.mcppmod.objects.tiers.VolatileItemTier;
-import com.eonzenx.mcppmod.util.CustomItemGroups;
+import com.eonzenx.mcppmod.util.registry_handlers.CustomItemGroups;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.HoeItem;

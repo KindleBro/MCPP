@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "ii",
+    "si",
+    "s "
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "mcppmod:alchemists_gold_ingot"
+    },
+    "s":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "mcppmod:volatile_axe",
+    "count": 1
+  }
+}

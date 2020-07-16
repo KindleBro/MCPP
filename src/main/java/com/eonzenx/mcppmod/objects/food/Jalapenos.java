@@ -1,6 +1,6 @@
 package com.eonzenx.mcppmod.objects.food;
 
-import com.eonzenx.mcppmod.util.BlockRegistryHandler;
+import com.eonzenx.mcppmod.util.registry_handlers.BlockRegistryHandler;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.potion.EffectInstance;

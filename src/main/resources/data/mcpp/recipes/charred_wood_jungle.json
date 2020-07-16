@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "ingredient": {
+    "item": "minecraft:jungle_log"
+  },
+  "result": "mcppmod:charred_wood",
+  "experience": 1,
+  "cookingtime": 100
+}

@@ -1,9 +1,9 @@
 package com.eonzenx.mcppmod.objects.armor;
 
 import com.eonzenx.mcppmod.MCPPMod;
-import com.eonzenx.mcppmod.objects.tiers.VolatileArmorMaterial;
 import com.eonzenx.mcppmod.objects.tiers.VolatileItemTier;
-import com.eonzenx.mcppmod.util.CustomItemGroups;
+import com.eonzenx.mcppmod.objects.tiers.MCPPModArmorMaterials;
+import com.eonzenx.mcppmod.util.registry_handlers.CustomItemGroups;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -17,9 +17,8 @@ import java.util.function.Consumer;
 public class VolatileArmorItem extends ArmorItem {
 
     public VolatileArmorItem(EquipmentSlotType slot) {
-        super(new VolatileArmorMaterial(), slot, new Properties().group(CustomItemGroups.CRAFTING_TAB));
+        super(MCPPModArmorMaterials.VOLATILE, slot, new Properties().group(CustomItemGroups.CRAFTING_TAB));
     }
-
 
     @Override
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
@@ -34,10 +33,10 @@ public class VolatileArmorItem extends ArmorItem {
             case HEAD:
             case CHEST:
             case FEET:
-                return MCPPMod.MOD_ID+":textures/models/armor/volatile_layer_1.png";
+                return MCPPMod.MOD_ID + ":textures/models/armor/volatile_layer_1.png";
             case LEGS:
-                return MCPPMod.MOD_ID+":textures/models/armor/volatile_layer_2.png";
+                return MCPPMod.MOD_ID + ":textures/models/armor/volatile_layer_2.png";
         }
-        return MCPPMod.MOD_ID+":textures/models/armor/volatile_layer_1.png";
+        return MCPPMod.MOD_ID + ":textures/models/armor/volatile_layer_1.png";
     }
 }

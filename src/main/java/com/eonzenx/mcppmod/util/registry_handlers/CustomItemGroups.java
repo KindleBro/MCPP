@@ -1,4 +1,4 @@
-package com.eonzenx.mcppmod.util;
+package com.eonzenx.mcppmod.util.registry_handlers;
 
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;

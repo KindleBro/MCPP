@@ -1,6 +1,7 @@
 package com.eonzenx.mcppmod.util;
 
 import com.eonzenx.mcppmod.MCPPMod;
+import com.eonzenx.mcppmod.util.registry_handlers.BlockRegistryHandler;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;

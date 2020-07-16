@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "i i",
+    "iii",
+    "iii"
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "mcppmod:alchemists_gold_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "mcppmod:volatile_chestplate",
+    "count": 1
+  }
+}

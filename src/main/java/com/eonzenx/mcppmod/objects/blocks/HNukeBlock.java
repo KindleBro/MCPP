@@ -65,11 +65,9 @@ public class HNukeBlock extends FallingBlock implements IForgeBlock {
 
     @Override
     public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-
         worldIn.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), H_NUKE_POWER, Explosion.Mode.DESTROY);
         return ActionResultType.SUCCESS;
     }
-
 
     @Override
     public void onEndFalling(World worldIn, BlockPos pos, BlockState fallingState, BlockState hitState, FallingBlockEntity p_176502_5_) {
