@@ -1,4 +1,4 @@
-package com.eonzenx.mcppmod.util;
+package com.eonzenx.mcppmod.client;
 
 import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.util.registry_handlers.BlockRegistryHandler;

@@ -1,4 +1,4 @@
-package com.eonzenx.mcppmod.util;
+package com.eonzenx.mcppmod.objects.tiers;
 
 import net.minecraft.item.crafting.Ingredient;
 

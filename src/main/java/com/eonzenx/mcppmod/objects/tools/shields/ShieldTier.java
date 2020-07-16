@@ -1,11 +1,9 @@
 package com.eonzenx.mcppmod.objects.tools.shields;
 
-import com.eonzenx.mcppmod.util.IShieldTier;
+import com.eonzenx.mcppmod.objects.tiers.IShieldTier;
 import com.eonzenx.mcppmod.util.registry_handlers.ItemRegistryHandler;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.tags.ItemTags;
 
 public enum ShieldTier implements IShieldTier {
 
