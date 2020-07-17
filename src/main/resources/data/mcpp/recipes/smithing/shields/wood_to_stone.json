@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "mcppmod:wooden_shield"
+  },
+  "addition": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": {
+    "item": "mcppmod:stone_shield"
+  }
+}

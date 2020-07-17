@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " p ",
+    "plp",
+    " p "
+  ],
+  "key":
+  {
+    "p":
+    {
+      "tag": "minecraft:planks"
+    },
+    "l":
+    {
+      "tag": "minecraft:logs"
+    }
+  },
+  "result":
+  {
+    "item": "mcppmod:wooden_shield",
+    "count": 1
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "mcppmod:item/volatile_axe"
+    "layer0": "mcppmod:item/volatile/volatile_axe"
   }
 }

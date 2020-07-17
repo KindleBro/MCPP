@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "mcppmod:item/volatile_pickaxe"
+    "layer0": "mcppmod:item/volatile/volatile_pickaxe"
   }
 }
