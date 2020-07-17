@@ -14,11 +14,21 @@ public class DashEventHandler {
     @SubscribeEvent
     public static void dashPlayer(OnDashEvent event) {
         PlayerEntity player = event.getPlayer();
-        float dashReduction = 0.35f;
+        float dashReduction;
+        float dashReductionMajor = 0.35f;
+        float dashReductionMinor = 0.60f;
         float dashUpForce = 0.35f;
 
+
+        // Minimum dash amount
         Vector3d playerMovement = player.getMotion();
-        Vector3d playerDashedMovement = new Vector3d(0, 0, 0);
+        if (playerMovement.length() < 0.1) {
+            dashReduction = dashReductionMinor;
+        } else {
+            dashReduction = dashReductionMajor;
+        }
+
+        Vector3d playerDashedMovement;
         float yaw = player.getPitchYaw().y;
 
         // 8 way direction
@@ -66,6 +76,9 @@ public class DashEventHandler {
             default:
                 playerDashedMovement = playerMovement.add(new Vector3d(0.0f, 1.0f, 0.0f));
         }
+
+        System.out.println(playerMovement.length());
+
         player.setMotion(playerDashedMovement.x, playerDashedMovement.y + dashUpForce, playerDashedMovement.z);
     }
 
