@@ -13,24 +13,44 @@ public class DashEventHandler {
 
     @SubscribeEvent
     public static void dashPlayer(OnDashEvent event) {
-        System.out.println("Tried to dash the player");
-
         PlayerEntity player = event.getPlayer();
         float dashReduction = 0.35f;
+        float dashUpForce = 0.35f;
 
         Vector3d playerMovement = player.getMotion();
         Vector3d playerDashedMovement = new Vector3d(0, 0, 0);
         float yaw = player.getPitchYaw().y;
 
+        // 8 way direction
         switch (event.getDirection()) {
             case FORWARD:
+                playerDashedMovement = playerMovement.add(                          // Take in consideration the players current movement
+                        Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw))          // Create a 3D vector from yaw
+                                .mul(dashReduction, dashReduction, dashReduction)); // Reduce dash force by uniform amount
+                break;
+            case FORWARD_LEFT:
                 playerDashedMovement = playerMovement.add(
-                        Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw))
+                        Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw - 45))
+                                .mul(dashReduction, dashReduction, dashReduction));
+                break;
+            case FORWARD_RIGHT:
+                playerDashedMovement = playerMovement.add(
+                        Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw + 45))
                                 .mul(dashReduction, dashReduction, dashReduction));
                 break;
             case BACKWARD:
                 playerDashedMovement = playerMovement.add(
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw - 180))
+                                .mul(dashReduction, dashReduction, dashReduction));
+                break;
+            case BACKWARD_LEFT:
+                playerDashedMovement = playerMovement.add(
+                        Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw - 90 - 45))
+                                .mul(dashReduction, dashReduction, dashReduction));
+                break;
+            case BACKWARD_RIGHT:
+                playerDashedMovement = playerMovement.add(
+                        Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw + 90 + 45))
                                 .mul(dashReduction, dashReduction, dashReduction));
                 break;
             case LEFT:
@@ -46,7 +66,7 @@ public class DashEventHandler {
             default:
                 playerDashedMovement = playerMovement.add(new Vector3d(0.0f, 1.0f, 0.0f));
         }
-        player.setMotion(playerDashedMovement.x, playerDashedMovement.y + 0.35f, playerDashedMovement.z);
+        player.setMotion(playerDashedMovement.x, playerDashedMovement.y + dashUpForce, playerDashedMovement.z);
     }
 
 }

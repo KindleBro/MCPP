@@ -25,35 +25,51 @@ public class KeyInputEventHandler {
     @SubscribeEvent
     public static void keyPress(InputEvent.KeyInputEvent event)
     {
-        if (event.getAction() == GLFW.GLFW_PRESS) {  // If the event is the start of a key down
+        if (event.getAction() == GLFW.GLFW_PRESS) {     // If the event is the start of a key down
             if (KeyBindings.DASH.getKey().getKeyCode() == event.getKey()) {
-                if (InputMappings.isKeyDown(
-                        Minecraft.getInstance().getMainWindow().getHandle(),  // Get game window ID
-                        Minecraft.getInstance().gameSettings.keyBindForward.getKey().getKeyCode()  // Get key id for movement
+
+                Minecraft mc_instance = Minecraft.getInstance();
+                long mc_handle = mc_instance.getMainWindow().getHandle();;
+
+                if (InputMappings.isKeyDown(mc_handle,          // Forward key down
+                        mc_instance.gameSettings.keyBindForward.getKey().getKeyCode()  // Get key id for movement
                 )) {
-                    MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.FORWARD, Minecraft.getInstance().player));
-                    System.out.println("Dashed forward!");
+                    if (InputMappings.isKeyDown(mc_handle,        // Left key down
+                            mc_instance.gameSettings.keyBindLeft.getKey().getKeyCode()
+                    )) {
+                        MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.FORWARD_LEFT, mc_instance.player));
+                    } else if (InputMappings.isKeyDown(mc_handle, // Right key down
+                            mc_instance.gameSettings.keyBindRight.getKey().getKeyCode()
+                    )) {
+                        MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.FORWARD_RIGHT, mc_instance.player));
+                    } else {    // Only moving forward
+                        MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.FORWARD, mc_instance.player));
+                    }
                 }
-                else if (InputMappings.isKeyDown(
-                        Minecraft.getInstance().getMainWindow().getHandle(),  // Get game window ID
-                        Minecraft.getInstance().gameSettings.keyBindBack.getKey().getKeyCode()  // Get key id for movement
+                else if (InputMappings.isKeyDown( mc_handle,    // Backward key down
+                        mc_instance.gameSettings.keyBindBack.getKey().getKeyCode()  // Get key id for movement
                 )) {
-                    MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.BACKWARD, Minecraft.getInstance().player));
-                    System.out.println("Dashed backward!");
+                    if (InputMappings.isKeyDown(mc_handle,        // Left key down
+                            mc_instance.gameSettings.keyBindLeft.getKey().getKeyCode()
+                    )) {
+                        MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.BACKWARD_LEFT, mc_instance.player));
+                    } else if (InputMappings.isKeyDown(mc_handle, // Right key down
+                            mc_instance.gameSettings.keyBindRight.getKey().getKeyCode()
+                    )) {
+                        MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.BACKWARD_RIGHT, mc_instance.player));
+                    } else {    // Only moving backward
+                        MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.BACKWARD, mc_instance.player));
+                    }
                 }
-                else if (InputMappings.isKeyDown(
-                        Minecraft.getInstance().getMainWindow().getHandle(),  // Get game window ID
-                        Minecraft.getInstance().gameSettings.keyBindLeft.getKey().getKeyCode()  // Get key id for movement
+                else if (InputMappings.isKeyDown(mc_handle,     // Just Left
+                        mc_instance.gameSettings.keyBindLeft.getKey().getKeyCode()
                 )) {
-                    MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.LEFT, Minecraft.getInstance().player));
-                    System.out.println("Dashed left!");
+                    MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.LEFT, mc_instance.player));
                 }
-                else if (InputMappings.isKeyDown(
-                        Minecraft.getInstance().getMainWindow().getHandle(),  // Get game window ID
-                        Minecraft.getInstance().gameSettings.keyBindRight.getKey().getKeyCode()  // Get key id for movement
+                else if (InputMappings.isKeyDown(mc_handle,     // Just Right
+                        mc_instance.gameSettings.keyBindRight.getKey().getKeyCode()
                 )) {
-                    MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.RIGHT, Minecraft.getInstance().player));
-                    System.out.println("Dashed right!");
+                    MinecraftForge.EVENT_BUS.post(new OnDashEvent(Direction.RIGHT, mc_instance.player));
                 }
             }
         }
