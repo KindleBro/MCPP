@@ -1,12 +1,16 @@
 package com.eonzenx.mcppmod.events.handlers;
 
 import com.eonzenx.mcppmod.MCPPMod;
+import com.eonzenx.mcppmod.entities.capabilities.providers.DashProvider;
 import com.eonzenx.mcppmod.events.OnDashEvent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Mod.EventBusSubscriber(modid = MCPPMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class DashEventHandler {
@@ -14,10 +18,17 @@ public class DashEventHandler {
     @SubscribeEvent
     public static void dashPlayer(OnDashEvent event) {
         PlayerEntity player = event.getPlayer();
+
+        AtomicBoolean canDash = new AtomicBoolean(false);
+        player.getCapability(DashProvider.DASH_CAP).ifPresent((handler) -> {canDash.set(handler.canDash());});
+
+        if (!canDash.get()) { return; }
+
         float dashReduction;
         float dashReductionMajor = 0.35f;
         float dashReductionMinor = 0.60f;
         float dashUpForce = 0.35f;
+        int dashCooldownTicks = 20;
 
 
         // Minimum dash amount
@@ -77,9 +88,20 @@ public class DashEventHandler {
                 playerDashedMovement = playerMovement.add(new Vector3d(0.0f, 1.0f, 0.0f));
         }
 
-        System.out.println(playerMovement.length());
-
         player.setMotion(playerDashedMovement.x, playerDashedMovement.y + dashUpForce, playerDashedMovement.z);
+
+        player.getCapability(DashProvider.DASH_CAP).ifPresent((handler) -> {handler.setCooldown(dashCooldownTicks);});
+    }
+
+    @SubscribeEvent
+    public static void reduceCooldown(TickEvent.PlayerTickEvent event) {
+        PlayerEntity player = event.player;
+
+        player.getCapability(DashProvider.DASH_CAP).ifPresent(
+                (handler) -> {
+                    handler.reduceCooldown();
+                }
+        );
     }
 
 }

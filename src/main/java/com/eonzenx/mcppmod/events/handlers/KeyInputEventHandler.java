@@ -9,6 +9,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.util.InputMappings;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.settings.KeyBindingMap;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,7 +21,7 @@ import net.minecraftforge.fml.common.Mod;
 import org.lwjgl.glfw.GLFW;
 
 
-@Mod.EventBusSubscriber(modid = MCPPMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = MCPPMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class KeyInputEventHandler {
 
     @SubscribeEvent
@@ -47,7 +49,7 @@ public class KeyInputEventHandler {
                     }
                 }
                 else if (InputMappings.isKeyDown( mc_handle,    // Backward key down
-                        mc_instance.gameSettings.keyBindBack.getKey().getKeyCode()  // Get key id for movement
+                        mc_instance.gameSettings.keyBindBack.getKey().getKeyCode()
                 )) {
                     if (InputMappings.isKeyDown(mc_handle,        // Left key down
                             mc_instance.gameSettings.keyBindLeft.getKey().getKeyCode()
