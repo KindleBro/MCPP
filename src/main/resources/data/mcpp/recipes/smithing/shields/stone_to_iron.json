@@ -4,7 +4,7 @@
     "item": "mcppmod:stone_shield"
   },
   "addition": {
-    "item": "minecraft:iron_ingot"
+    "item": "minecraft:iron_block"
   },
   "result": {
     "item": "mcppmod:iron_shield"

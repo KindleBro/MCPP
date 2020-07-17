@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " c ",
+    "cpc",
+    "ccc"
+  ],
+  "key":
+  {
+    "p":
+    {
+      "tag": "minecraft:logs"
+    },
+    "c":
+    {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "result":
+  {
+    "item": "mcppmod:stone_shield",
+    "count": 1
+  }
+}

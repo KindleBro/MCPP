@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "g g",
+    "gig",
+    " g "
+  ],
+  "key":
+  {
+    "i":
+    {
+      "item": "minecraft:iron_block"
+    },
+    "g":
+    {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "result":
+  {
+    "item": "mcppmod:gold_shield",
+    "count": 1
+  }
+}

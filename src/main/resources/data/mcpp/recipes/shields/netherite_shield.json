@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "nnn",
+    "ndn",
+    " n "
+  ],
+  "key":
+  {
+    "d":
+    {
+      "item": "minecraft:diamond_block"
+    },
+    "n":
+    {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result":
+  {
+    "item": "mcppmod:netherite_shield",
+    "count": 1
+  }
+}
