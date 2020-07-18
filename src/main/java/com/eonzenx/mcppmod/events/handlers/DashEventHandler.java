@@ -3,7 +3,10 @@ package com.eonzenx.mcppmod.events.handlers;
 import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.entities.capabilities.providers.DashProvider;
 import com.eonzenx.mcppmod.events.OnDashEvent;
+import com.eonzenx.mcppmod.util.config.DashConfig;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector2f;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.event.TickEvent;
@@ -22,22 +25,32 @@ public class DashEventHandler {
         AtomicBoolean canDash = new AtomicBoolean(false);
         player.getCapability(DashProvider.DASH_CAP).ifPresent((handler) -> {canDash.set(handler.canDash());});
 
-        if (!canDash.get()) { return; }
+        boolean isPlayerOnGround = player.func_233570_aj_();
 
-        float dashReduction;
-        float dashReductionMajor = 0.35f;
-        float dashReductionMinor = 0.60f;
-        float dashUpForce = 0.35f;
-        int dashCooldownTicks = 20;
+        if (!canDash.get() || !isPlayerOnGround) { return; }
+
+        // Default values
+        float dashMultiplier = DashConfig.FORCE_REDUCER_MAJOR;
+        float dashUpForce = DashConfig.UP_FORCE;
+        int dashCooldown = DashConfig.COOLDOWN;
 
 
         // Minimum dash amount
         Vector3d playerMovement = player.getMotion();
-        if (playerMovement.length() < 0.1) {
-            dashReduction = dashReductionMinor;
-        } else {
-            dashReduction = dashReductionMajor;
-        }
+        if (playerMovement.length() < 0.1) { dashMultiplier = DashConfig.FORCE_REDUCER_MINOR; }
+
+
+        // Enchantment dash force multiplier
+        //int dashForceELvl = EnchantmentHelper.getMaxEnchantmentLevel();
+        //dashMultiplier *= (dashForceELvl / 10) + 1;
+
+        // Enchantment up force multiplier
+        //int dashJumpForceELvl = EnchantmentHelper.getMaxEnchantmentLevel();
+        //dashUpForce *= (dashJumpForceELvl / 2) + 1;
+
+        // Enchantment cooldown multiplier
+        //int dashCooldownELvl = EnchantmentHelper.getMaxEnchantmentLevel();
+        //dashCooldown *= MathHelper.floor(dashCooldownELvl * 0.1f);
 
         Vector3d playerDashedMovement;
         float yaw = player.getPitchYaw().y;
@@ -45,44 +58,44 @@ public class DashEventHandler {
         // 8 way direction
         switch (event.getDirection()) {
             case FORWARD:
-                playerDashedMovement = playerMovement.add(                          // Take in consideration the players current movement
-                        Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw))          // Create a 3D vector from yaw
-                                .mul(dashReduction, dashReduction, dashReduction)); // Reduce dash force by uniform amount
+                playerDashedMovement = playerMovement.add(                              // Take in consideration the players current movement
+                        Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw))              // Create a 3D vector from yaw
+                                .mul(dashMultiplier, dashMultiplier, dashMultiplier));  // Reduce dash force by uniform amount
                 break;
             case FORWARD_LEFT:
                 playerDashedMovement = playerMovement.add(
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw - 45))
-                                .mul(dashReduction, dashReduction, dashReduction));
+                                .mul(dashMultiplier, dashMultiplier, dashMultiplier));
                 break;
             case FORWARD_RIGHT:
                 playerDashedMovement = playerMovement.add(
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw + 45))
-                                .mul(dashReduction, dashReduction, dashReduction));
+                                .mul(dashMultiplier, dashMultiplier, dashMultiplier));
                 break;
             case BACKWARD:
                 playerDashedMovement = playerMovement.add(
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw - 180))
-                                .mul(dashReduction, dashReduction, dashReduction));
+                                .mul(dashMultiplier, dashMultiplier, dashMultiplier));
                 break;
             case BACKWARD_LEFT:
                 playerDashedMovement = playerMovement.add(
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw - 90 - 45))
-                                .mul(dashReduction, dashReduction, dashReduction));
+                                .mul(dashMultiplier, dashMultiplier, dashMultiplier));
                 break;
             case BACKWARD_RIGHT:
                 playerDashedMovement = playerMovement.add(
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw + 90 + 45))
-                                .mul(dashReduction, dashReduction, dashReduction));
+                                .mul(dashMultiplier, dashMultiplier, dashMultiplier));
                 break;
             case LEFT:
                 playerDashedMovement = playerMovement.add(
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw - 90))
-                                .mul(dashReduction, dashReduction, dashReduction));
+                                .mul(dashMultiplier, dashMultiplier, dashMultiplier));
                 break;
             case RIGHT:
                 playerDashedMovement = playerMovement.add(
                         Vector3d.fromPitchYaw(new Vector2f(0.0f, yaw + 90))
-                                .mul(dashReduction, dashReduction, dashReduction));
+                                .mul(dashMultiplier, dashMultiplier, dashMultiplier));
                 break;
             default:
                 playerDashedMovement = playerMovement.add(new Vector3d(0.0f, 1.0f, 0.0f));
@@ -90,7 +103,7 @@ public class DashEventHandler {
 
         player.setMotion(playerDashedMovement.x, playerDashedMovement.y + dashUpForce, playerDashedMovement.z);
 
-        player.getCapability(DashProvider.DASH_CAP).ifPresent((handler) -> {handler.setCooldown(dashCooldownTicks);});
+        player.getCapability(DashProvider.DASH_CAP).ifPresent((handler) -> {handler.setCooldown(dashCooldown);});
     }
 
     @SubscribeEvent
