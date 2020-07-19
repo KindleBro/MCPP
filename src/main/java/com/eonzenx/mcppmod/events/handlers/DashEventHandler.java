@@ -43,15 +43,21 @@ public class DashEventHandler {
 
         // Enchantment dash force multiplier
         float dashForceELvl = EnchantmentHelper.getMaxEnchantmentLevel(EnchantRegistryHandler.BOOST.get(), player);
-        dashMultiplier *= (dashForceELvl / 2.5f) + 1;
+        if (dashForceELvl > 0) {
+            dashMultiplier *= (dashForceELvl / 2.5f) + 1;
+        }
 
         // Enchantment up force multiplier
         float dashJumpForceELvl = EnchantmentHelper.getMaxEnchantmentLevel(EnchantRegistryHandler.HIGH_JUMP.get(), player);
-        dashUpForce *= (dashJumpForceELvl / 3.10f) + 1;
+        if (dashJumpForceELvl > 0) {
+            dashUpForce *= (dashJumpForceELvl / 3.10f) + 1;
+        }
 
         // Enchantment cooldown multiplier
         float dashCooldownELvl = EnchantmentHelper.getMaxEnchantmentLevel(EnchantRegistryHandler.AGILE.get(), player);
-        dashCooldown *= 1 - MathHelper.floor(dashCooldownELvl / 4.f);
+        if (dashCooldownELvl > 0) {
+            dashCooldown *= 1 - ((1/7.5f) * dashCooldownELvl);
+        }
 
 
         Vector3d playerDashedMovement;
