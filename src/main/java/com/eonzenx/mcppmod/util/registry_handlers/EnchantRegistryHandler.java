@@ -20,7 +20,10 @@ public class EnchantRegistryHandler
 
     public static void init() { ENCHANTMENTS.register(FMLJavaModLoadingContext.get().getModEventBus()); }
 
+    // Dash
     public static final RegistryObject<Enchantment> AGILE = ENCHANTMENTS.register("agile", AgileEnchant::new);
     public static final RegistryObject<Enchantment> BOOST = ENCHANTMENTS.register("boost", BoostEnchant::new);
     public static final RegistryObject<Enchantment> HIGH_JUMP = ENCHANTMENTS.register("high_jump", HighJumpEnchant::new);
+
+    // Shields
 }

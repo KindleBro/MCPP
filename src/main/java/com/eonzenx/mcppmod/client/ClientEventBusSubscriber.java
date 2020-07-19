@@ -33,7 +33,12 @@ public class ClientEventBusSubscriber {
                 new ResourceLocation(MCPPMod.MOD_ID, "blocking"),
                 (itemStack, world, entity) -> entity != null && entity.isHandActive() && entity.getActiveItemStack() == itemStack ? 1.0F : 0.0F
         );
+        ItemModelsProperties.func_239418_a_(ToolRegistryHandler.NETHERITE_SHIELD.get(),
+                new ResourceLocation(MCPPMod.MOD_ID, "blocking"),
+                (itemStack, world, entity) -> entity != null && entity.isHandActive() && entity.getActiveItemStack() == itemStack ? 1.0F : 0.0F
+        );
 
+        // Soup pot
         ScreenManager.registerFactory(ContainerRegistryHandler.SOUP_POT_CONTAINER.get(), SoupPotBlockScreen::new);
 
 
