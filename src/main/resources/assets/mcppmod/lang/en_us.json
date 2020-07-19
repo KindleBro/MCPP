@@ -61,5 +61,10 @@
 
   "_comment10": "Util stuff goes here",
   "key.categories.mcppmod.text": "Minecraft++",
-  "key.dash.text": "Dash"
+  "key.dash.text": "Dash",
+
+  "_comment11": "Enchant stuff goes here",
+  "enchantment.mcppmod.agile": "Agile",
+  "enchantment.mcppmod.boost": "Boost",
+  "enchantment.mcppmod.high_jump": "High Jump"
 }

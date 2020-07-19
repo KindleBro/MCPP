@@ -4,6 +4,7 @@ import com.eonzenx.mcppmod.MCPPMod;
 import com.eonzenx.mcppmod.entities.capabilities.providers.DashProvider;
 import com.eonzenx.mcppmod.events.OnDashEvent;
 import com.eonzenx.mcppmod.util.config.DashConfig;
+import com.eonzenx.mcppmod.util.registry_handlers.EnchantRegistryHandler;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.MathHelper;
@@ -41,16 +42,17 @@ public class DashEventHandler {
 
 
         // Enchantment dash force multiplier
-        //int dashForceELvl = EnchantmentHelper.getMaxEnchantmentLevel();
-        //dashMultiplier *= (dashForceELvl / 10) + 1;
+        float dashForceELvl = EnchantmentHelper.getMaxEnchantmentLevel(EnchantRegistryHandler.BOOST.get(), player);
+        dashMultiplier *= (dashForceELvl / 2.5f) + 1;
 
         // Enchantment up force multiplier
-        //int dashJumpForceELvl = EnchantmentHelper.getMaxEnchantmentLevel();
-        //dashUpForce *= (dashJumpForceELvl / 2) + 1;
+        float dashJumpForceELvl = EnchantmentHelper.getMaxEnchantmentLevel(EnchantRegistryHandler.HIGH_JUMP.get(), player);
+        dashUpForce *= (dashJumpForceELvl / 3.10f) + 1;
 
         // Enchantment cooldown multiplier
-        //int dashCooldownELvl = EnchantmentHelper.getMaxEnchantmentLevel();
-        //dashCooldown *= MathHelper.floor(dashCooldownELvl * 0.1f);
+        float dashCooldownELvl = EnchantmentHelper.getMaxEnchantmentLevel(EnchantRegistryHandler.AGILE.get(), player);
+        dashCooldown *= 1 - MathHelper.floor(dashCooldownELvl / 4.f);
+
 
         Vector3d playerDashedMovement;
         float yaw = player.getPitchYaw().y;
@@ -103,7 +105,8 @@ public class DashEventHandler {
 
         player.setMotion(playerDashedMovement.x, playerDashedMovement.y + dashUpForce, playerDashedMovement.z);
 
-        player.getCapability(DashProvider.DASH_CAP).ifPresent((handler) -> {handler.setCooldown(dashCooldown);});
+        int finalDashCooldown = dashCooldown;   // Recommended effectively final variable
+        player.getCapability(DashProvider.DASH_CAP).ifPresent((handler) -> {handler.setCooldown(finalDashCooldown);});
     }
 
     @SubscribeEvent

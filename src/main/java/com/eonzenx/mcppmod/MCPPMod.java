@@ -38,6 +38,7 @@ public class MCPPMod
         BlockRegistryHandler.init();
         ItemRegistryHandler.init();
         ToolRegistryHandler.init();
+        EnchantRegistryHandler.init();
 
         SoupRecipes.init();
         instance = this;
